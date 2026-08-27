@@ -62,25 +62,44 @@ body {
 
   @page {
     size: letter portrait;
-    margin: 0.38in;
+    margin: 0.32in;
   }
 
   html,
   body {
     background: #fff !important;
+    height: auto !important;
   }
 
   .media-kit-page {
     background: #fff !important;
+    min-height: 0 !important;
+    padding: 0 !important;
   }
 
   .media-kit-sheet {
-    width: 100%;
-    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    min-height: calc(11in - 0.64in);
+    height: calc(11in - 0.64in);
+    max-height: calc(11in - 0.64in);
     margin: 0 !important;
     padding: 0 !important;
     box-shadow: none;
     outline: none;
+    overflow: hidden;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+    page-break-before: avoid;
+  }
+
+  .media-kit-sheet header,
+  .media-kit-sheet section,
+  .media-kit-sheet footer {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   * {

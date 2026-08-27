@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PrintButton } from "@/components/PrintButton";
+import heroPortrait from "@/public/images/hero-portrait.jpg";
 
 export const metadata: Metadata = {
   title: "Media Kit — Asma Zaheer",
@@ -9,10 +10,18 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { value: "30K+", label: "Community" },
-  { value: "85%+", label: "Female, Ages 18–34" },
-  { value: "12%+", label: "Save / Engagement Rate" },
-  { value: "US / UK / CA", label: "Core Geo" },
+  { value: "375K+", label: "60-Day Post Views" },
+  { value: "13.8%", label: "Engagement / Like Rate" },
+  { value: "5.4K", label: "Profile Intent Visits" },
+] as const;
+
+const brands = [
+  "Dyson USA",
+  "Jo Malone London",
+  "SKINFOOD",
+  "Color Wow",
+  "SEKKISEI",
+  "Thayers",
 ] as const;
 
 const pillars = [
@@ -56,19 +65,28 @@ export default function MediaKitPage() {
         ← Asma Zaheer
       </Link>
 
-      <article className="media-kit-sheet mx-auto mt-4 mb-16 bg-porcelain px-[0.55in] py-[0.48in] text-onyx md:mt-6">
+      <article className="media-kit-sheet mx-auto mt-4 mb-16 flex flex-col bg-porcelain px-[0.55in] py-[0.48in] text-onyx md:mt-6">
         <header className="border-b-[3px] border-double border-champagne pb-5">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.32em] text-blush">
-                Media Kit
-              </p>
-              <h1 className="mt-2 font-display text-[2.65rem] leading-[0.92] tracking-tight">
-                Asma Zaheer
-              </h1>
-              <p className="mt-2 text-[13px] tracking-wide text-onyx/70">
-                @itsasmazaheer
-              </p>
+          <div className="flex items-center justify-between gap-5">
+            <div className="flex min-w-0 items-center gap-4">
+              <img
+                src={heroPortrait.src}
+                alt="Asma Zaheer"
+                width={96}
+                height={96}
+                className="h-20 w-20 shrink-0 rounded-full object-cover ring-1 ring-champagne/85 ring-offset-2 ring-offset-porcelain sm:h-24 sm:w-24"
+              />
+              <div className="min-w-0">
+                <p className="text-[10px] uppercase tracking-[0.32em] text-blush">
+                  Media Kit
+                </p>
+                <h1 className="mt-1.5 font-display text-[2.35rem] leading-[0.92] tracking-tight sm:text-[2.65rem]">
+                  Asma Zaheer
+                </h1>
+                <p className="mt-1.5 text-[13px] tracking-wide text-onyx/70">
+                  @itsasmazaheer
+                </p>
+              </div>
             </div>
             <div className="hidden text-right sm:block">
               <p className="font-display text-[15px] italic leading-snug text-onyx/85">
@@ -101,23 +119,34 @@ export default function MediaKitPage() {
           </ul>
         </header>
 
-        <section className="mt-6">
+        <section className="mt-5">
           <h2 className="text-[10px] uppercase tracking-[0.28em] text-blush">
             Audience &amp; Stats
           </h2>
-          <div className="mt-3 grid grid-cols-2 gap-px bg-champagne/50 sm:grid-cols-4">
+          <div className="mt-3 grid grid-cols-3 gap-px bg-champagne/50">
             {stats.map((stat) => (
-              <div key={stat.label} className="bg-porcelain px-3 py-3.5">
-                <p className="font-display text-[1.55rem] leading-none">{stat.value}</p>
+              <div key={stat.label} className="bg-porcelain px-3 py-3">
+                <p className="font-display text-[1.45rem] leading-none sm:text-[1.55rem]">
+                  {stat.value}
+                </p>
                 <p className="mt-2 text-[10px] uppercase tracking-[0.14em] text-onyx/60">
                   {stat.label}
                 </p>
               </div>
             ))}
           </div>
+          <p className="mt-3 border border-champagne/45 bg-cream/60 px-3 py-2.5 text-[11px] leading-relaxed tracking-wide text-onyx/75">
+            <span className="uppercase tracking-[0.16em] text-blush">
+              Core Demographic
+            </span>
+            <span className="mx-2 text-champagne">·</span>
+            85%+ Female (Ages 18–34)
+            <span className="mx-2 text-champagne">|</span>
+            US, UK &amp; Canada
+          </p>
         </section>
 
-        <section className="mt-6">
+        <section className="mt-5">
           <h2 className="text-[10px] uppercase tracking-[0.28em] text-blush">
             Content Pillars
           </h2>
@@ -138,7 +167,7 @@ export default function MediaKitPage() {
           </div>
         </section>
 
-        <section className="mt-6">
+        <section className="mt-5">
           <h2 className="text-[10px] uppercase tracking-[0.28em] text-blush">
             Collaboration Packages
           </h2>
@@ -166,15 +195,25 @@ export default function MediaKitPage() {
           </div>
         </section>
 
-        <footer className="mt-7 border-t border-champagne/50 pt-4">
+        <footer className="mt-auto border-t border-champagne/50 pt-4">
           <h2 className="text-[10px] uppercase tracking-[0.28em] text-blush">
-            Booking Terms
+            Selected Brand Mentions
           </h2>
-          <p className="mt-2 max-w-[36rem] text-[12.5px] leading-relaxed text-onyx/75">
+          <ul className="mt-3 flex flex-wrap gap-1.5">
+            {brands.map((brand) => (
+              <li
+                key={brand}
+                className="border border-champagne/55 bg-porcelain px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-onyx/70"
+              >
+                {brand}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 max-w-[36rem] text-[12px] leading-relaxed text-onyx/75">
             Spark Ads whitelisting &amp; extended usage rights available upon
             request.
           </p>
-          <p className="mt-4 font-display text-sm italic text-onyx/55">
+          <p className="mt-3 font-display text-sm italic text-onyx/55">
             Asma Zaheer · @itsasmazaheer · itsasmazaheer.com
           </p>
         </footer>
