@@ -1,3 +1,5 @@
+export const PUBLIC_SITE_URL = "https://asma-zaheer-portfolio.vercel.app";
+
 export function resolveSiteUrl(
   explicit: string | undefined = process.env.NEXT_PUBLIC_SITE_URL,
   vercelHost: string | undefined = process.env.VERCEL_URL,
@@ -11,9 +13,8 @@ export function resolveSiteUrl(
     }
   }
 
-  const host = vercelHost?.trim();
-  if (host) {
-    return `https://${host.replace(/^https?:\/\//, "")}`;
+  if (vercelHost?.trim()) {
+    return PUBLIC_SITE_URL;
   }
 
   return "http://localhost:3000";
