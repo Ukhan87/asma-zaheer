@@ -1,0 +1,76 @@
+{
+  "videos": [
+    {
+      "id": "expressions-firming-gel",
+      "brand": "Expressions US",
+      "product": "Cryotherapy Firming & Toning Gel",
+      "title": "Cooling & warming formula for smooth, firm-looking skin texture",
+      "category": "ugc-demo",
+      "src": "/videos/ugc-serum-demo.mp4",
+      "poster": "/images/posters/ugc-serum-demo.jpg",
+      "badges": [
+        "UGC Demo"
+      ]
+    },
+    {
+      "id": "skinfood-rice-scrub",
+      "brand": "SKINFOOD",
+      "product": "Rice Daily Brightening Scrub Foam",
+      "title": "Gentle micro-exfoliation with fine rice powder for glass-skin radiance",
+      "category": "ugc-demo",
+      "src": "/videos/ugc-face-mask.mp4",
+      "poster": "/images/posters/ugc-face-mask.jpg",
+      "badges": [
+        "K-Beauty Glow"
+      ]
+    },
+    {
+      "id": "ucoolme-lip-tint",
+      "brand": "uCoolMe Makeup",
+      "product": "2-in-1 Peel-Off Lip Tint & Plumping Gloss",
+      "title": "Transfer-proof peel stain & plumping gloss in shade 'Glory'",
+      "category": "tactile_asmr",
+      "src": "/videos/asmr-lip-peel-mask.mp4",
+      "poster": "/images/posters/asmr-lip-peel-mask.jpg",
+      "badges": [
+        "Top Saved"
+      ]
+    },
+    {
+      "id": "sekkisei-glass-skin",
+      "brand": "SEKKISEI US",
+      "product": "One-Step Glass Skin Ritual",
+      "title": "Tactile spatula cream application & instant dewy glass-skin radiance",
+      "category": "tactile_asmr",
+      "src": "/videos/sekkisei-glass-skin.mp4",
+      "poster": "/images/sekkisei-glass-skin-poster.jpg",
+      "badges": [
+        "J-Beauty Glow"
+      ]
+    },
+    {
+      "id": "color-wow-dyson-blowout",
+      "brand": "Color Wow × Dyson",
+      "product": "Voluminous Blowout Routine",
+      "title": "Bouncy salon blowout with Color Wow Dream Coat & Dyson Airwrap",
+      "category": "aesthetic_routines",
+      "src": "/videos/hair-blowout.mp4",
+      "poster": "/images/hair-blowout-poster.jpg",
+      "badges": [
+        "48K Views"
+      ]
+    },
+    {
+      "id": "night-routine",
+      "brand": "Jo Malone × Dyson",
+      "product": "Nighttime Beauty & Wellness Routine",
+      "title": "Ambient evening relaxation ritual featuring Jo Malone London and self-care essentials",
+      "category": "aesthetic_routines",
+      "src": "/videos/rouitne-night-reset.mp4",
+      "poster": "/images/posters/rouitne-night-reset.jpg",
+      "badges": [
+        "Night Reset"
+      ]
+    }
+  ]
+}

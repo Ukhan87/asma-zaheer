@@ -1,0 +1,39 @@
+{
+  "name": "Asma Zaheer",
+  "handle": "@itsasmazaheer",
+  "tagline": "Elevated Skincare Rituals & High-Conversion Beauty Storytelling",
+  "email": "asmazaheer08@gmail.com",
+  "socials": {
+    "tiktok": "https://www.tiktok.com/@itsasmazaheer",
+    "instagram": "https://www.instagram.com/itsasmazaheer"
+  },
+  "pills": [
+    { "value": "30K+", "label": "Total Community" },
+    { "value": "85%+", "label": "Female Audience, Ages 18–34" },
+    { "value": "12%+", "label": "Engagement / Save Rate" },
+    { "value": "US / UK / CA", "label": "Core Demographic" }
+  ],
+  "demographics": {
+    "gender": [
+      { "label": "Female", "percent": 88 },
+      { "label": "Male", "percent": 12 }
+    ],
+    "age": [
+      { "label": "18–24", "percent": 65 },
+      { "label": "25–34", "percent": 25 },
+      { "label": "35+", "percent": 10 }
+    ],
+    "locations": [
+      { "label": "United States", "percent": 74 },
+      { "label": "United Kingdom", "percent": 14 },
+      { "label": "Canada", "percent": 8 },
+      { "label": "Other", "percent": 4 }
+    ]
+  },
+  "kpis": [
+    { "value": "375K+", "label": "60-Day Post Views" },
+    { "value": "13.8%", "label": "Engagement Rate" },
+    { "value": "5.4K", "label": "Profile Visits" },
+    { "value": "1K+", "label": "Content Shares" }
+  ]
+}
