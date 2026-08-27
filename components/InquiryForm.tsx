@@ -96,8 +96,9 @@ export function InquiryForm() {
         <p className="text-[11px] uppercase tracking-[0.28em] text-blush">Inquire</p>
         <h2 className="mt-3 font-display text-4xl md:text-5xl">Send a brief</h2>
         <p className="mt-4 max-w-xl text-sm leading-relaxed text-onyx/70">
-          Tell Asma the product, the usage, and the timeline. She replies from{" "}
-          asmazaheer.creates@gmail.com.
+          Share your product, usage requirements, and timeline. I review all
+          briefs personally and reply from asmazaheer.creates@gmail.com within
+          24–48 hours.
         </p>
       </Reveal>
       <form onSubmit={onSubmit} className="relative mt-12 grid gap-5 md:grid-cols-2">
