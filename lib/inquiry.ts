@@ -103,34 +103,16 @@ function escapeHtml(value: string): string {
     .replace(/"/g, "&quot;");
 }
 
-function row(label: string, value: string): string {
-  return `<tr>
-    <td style="padding:10px 0;border-bottom:1px solid #e8dfd0;width:160px;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#6b4f4f;">${escapeHtml(label)}</td>
-    <td style="padding:10px 0;border-bottom:1px solid #e8dfd0;font-size:15px;color:#1a1a1a;">${escapeHtml(value).replace(/\n/g, "<br/>")}</td>
-  </tr>`;
-}
-
-export function buildInquiryEmail(data: InquiryPayload): string {
-  return `<!DOCTYPE html>
-<html>
-  <body style="margin:0;background:#faf9f6;padding:32px;font-family:Georgia,'Times New Roman',serif;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:640px;margin:0 auto;background:#ffffff;padding:32px;border:1px solid #c5a880;">
-      <tr>
-        <td>
-          <p style="margin:0;font-size:11px;letter-spacing:0.28em;text-transform:uppercase;color:#6b4f4f;">New collaboration brief</p>
-          <h1 style="margin:12px 0 24px;font-weight:400;font-size:28px;color:#1a1a1a;">${escapeHtml(data.brandName)}</h1>
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-            ${row("Brand website", data.website)}
-            ${row("Contact", data.contactName)}
-            ${row("Work email", data.email)}
-            ${row("Budget", data.budget)}
-            ${row("Deliverables", data.deliverables.join(", "))}
-            ${row("Timeline", data.timeline || "Not specified")}
-            ${row("Brief", data.brief)}
-          </table>
-        </td>
-      </tr>
-    </table>
-  </body>
-</html>`;
+export function buildInquiryTelegramMessage(data: InquiryPayload): string {
+  const timeline = data.timeline || "Not specified";
+  return [
+    "📩 <b>New Brand Collab Inquiry</b>",
+    "",
+    `<b>Brand:</b> ${escapeHtml(data.brandName)} (${escapeHtml(data.website)})`,
+    `<b>Contact:</b> ${escapeHtml(data.contactName)} (${escapeHtml(data.email)})`,
+    `<b>Budget Tier:</b> ${escapeHtml(data.budget)}`,
+    `<b>Deliverables:</b> ${escapeHtml(data.deliverables.join(", "))}`,
+    `<b>Timeline:</b> ${escapeHtml(timeline)}`,
+    `<b>Brief:</b> ${escapeHtml(data.brief)}`,
+  ].join("\n");
 }

@@ -1,10 +1,8 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
-import { buildInquiryEmail, parseInquiry } from "@/lib/inquiry";
+import { buildInquiryTelegramMessage, parseInquiry } from "@/lib/inquiry";
 
-const CONTACT_TO = process.env.CONTACT_TO ?? "asmazaheer08@gmail.com";
-const RESEND_FROM =
-  process.env.RESEND_FROM ?? "Asma Zaheer <beth.t@example.com>";
+const SEND_ERROR =
+  "Could not send right now. Email asmazaheer08@gmail.com directly.";
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -25,36 +23,32 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    return NextResponse.json(
-      {
-        ok: false,
-        error:
-          "Could not send right now. Email asmazaheer08@gmail.com directly.",
-      },
-      { status: 500 },
-    );
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+  if (!token || !chatId) {
+    return NextResponse.json({ ok: false, error: SEND_ERROR }, { status: 500 });
   }
 
-  const resend = new Resend(apiKey);
-  const { error } = await resend.emails.send({
-    from: RESEND_FROM,
-    to: CONTACT_TO,
-    replyTo: parsed.data.email,
-    subject: `Brand inquiry from ${parsed.data.brandName}`,
-    html: buildInquiryEmail(parsed.data),
-  });
-
-  if (error) {
-    return NextResponse.json(
+  try {
+    const telegramResponse = await fetch(
+      `https://api.telegram.org/bot${token}/sendMessage`,
       {
-        ok: false,
-        error:
-          "Could not send right now. Email asmazaheer08@gmail.com directly.",
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: buildInquiryTelegramMessage(parsed.data),
+          parse_mode: "HTML",
+          disable_web_page_preview: true,
+        }),
       },
-      { status: 500 },
     );
+    const payload = (await telegramResponse.json()) as { ok?: boolean };
+    if (!telegramResponse.ok || payload.ok !== true) {
+      return NextResponse.json({ ok: false, error: SEND_ERROR }, { status: 500 });
+    }
+  } catch {
+    return NextResponse.json({ ok: false, error: SEND_ERROR }, { status: 500 });
   }
 
   return NextResponse.json({ ok: true });

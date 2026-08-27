@@ -6,7 +6,7 @@ Mobile-first media kit for [@itsasmazaheer](https://www.tiktok.com/@itsasmazahee
 
 ```bash
 cp .env.example .env.local
-# add RESEND_API_KEY
+# add TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID
 npm install
 npm run dev
 ```
