@@ -110,10 +110,10 @@ export default function MediaKitPage() {
             </li>
             <li>
               <a
-                href="mailto:asmazaheer08@gmail.com"
+                href="mailto:asmazaheer.creates@gmail.com"
                 className="border-b border-champagne/70 pb-px hover:text-blush"
               >
-                asmazaheer08@gmail.com
+                asmazaheer.creates@gmail.com
               </a>
             </li>
           </ul>

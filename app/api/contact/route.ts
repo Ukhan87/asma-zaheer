@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { buildInquiryTelegramMessage, parseInquiry } from "@/lib/inquiry";
 
 const SEND_ERROR =
-  "Could not send right now. Email asmazaheer08@gmail.com directly.";
+  "Could not send right now. Email asmazaheer.creates@gmail.com directly.";
 
 export async function POST(request: Request) {
   let body: unknown;

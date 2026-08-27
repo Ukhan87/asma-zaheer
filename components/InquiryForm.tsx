@@ -60,7 +60,7 @@ export function InquiryForm() {
         setStatus("error");
         setMessage(
           payload.error ??
-            "Could not send right now. Email asmazaheer08@gmail.com directly.",
+            "Could not send right now. Email asmazaheer.creates@gmail.com directly.",
         );
         return;
       }
@@ -69,7 +69,7 @@ export function InquiryForm() {
     } catch {
       setStatus("error");
       setMessage(
-        "Could not send right now. Email asmazaheer08@gmail.com directly.",
+        "Could not send right now. Email asmazaheer.creates@gmail.com directly.",
       );
     }
   }
@@ -97,7 +97,7 @@ export function InquiryForm() {
         <h2 className="mt-3 font-display text-4xl md:text-5xl">Send a brief</h2>
         <p className="mt-4 max-w-xl text-sm leading-relaxed text-onyx/70">
           Tell Asma the product, the usage, and the timeline. She replies from{" "}
-          asmazaheer08@gmail.com.
+          asmazaheer.creates@gmail.com.
         </p>
       </Reveal>
       <form onSubmit={onSubmit} className="relative mt-12 grid gap-5 md:grid-cols-2">
